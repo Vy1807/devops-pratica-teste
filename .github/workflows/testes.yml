@@ -22,4 +22,12 @@ jobs:
       - name: Baixar o código do repositório
         uses: actions/checkout@v3
 
-      # Etapa 2: Instalar o Python 3.10 no ambiente
+      # Etapa 2: Instalar o Python 3.10 no ambiente de teste
+      - name: Configurar o ambiente com Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Etapa 3: Rodar o arquivo de teste (teste.py)
+      - name: Executar o teste automático
+        run: python teste.py
